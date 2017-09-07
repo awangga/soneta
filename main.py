@@ -10,7 +10,7 @@ G=nx.Graph()
 with open(config.datasetinput, newline='') as dataset:
 	alldata = csv.reader(dataset, delimiter=',',quotechar="|")
 	for row in alldata:
-		G.add_edge(row[0],row[1],weight=float(row[5]))
+		G.add_edge(row[config.nodefrom_row_number],row[config.nodeto_row_number],weight=float(row[config.weight_row_number]))
 
 
 satu=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] >=1]
